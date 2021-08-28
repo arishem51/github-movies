@@ -1,0 +1,645 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+}
+::selection{
+    background-color: #ec7532;
+    color: white;
+}
+#kiki{
+    transform: rotate(90deg);
+}
+
+.section{
+    padding: 75px 0;
+}
+
+.title{
+    color: #ec7532;
+    font-size: 1.125rem;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #d8d8d8;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+}
+.title--white{
+    color: white;
+    border-bottom: 1px solid #333;
+}
+.title::after{
+    content: "";
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    width: 125px;
+    height: 4px;
+    display: block;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+/* Line Style */
+
+.line::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right,#fbbd61,#ec7532 );
+    display: block;
+    box-shadow: 0 0 20px 0 #fbbd61;
+    transition: .5s all;
+}
+
+.line:hover::after{
+    width: 100%;
+}
+
+.active.line::after{
+    width: 100%;
+}
+
+/* Header */
+header{
+    position: absolute;
+    top: 20px;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+header p{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#movieNavbar 
+.navbar-nav{
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+#movieNavbar 
+.navbar-nav .nav-link{
+    color: white;
+    letter-spacing: 3px;
+    line-height: 0.8em;
+    padding: 20px 24px;
+
+}
+
+/* Carousel */
+
+#carouselMovie .carousel-item .carousel-caption{
+    text-align: left;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.carousel-caption p:first-of-type{
+   font-size: 0.875rem;
+   color: #fbbd61; 
+   letter-spacing: 2px;
+   margin: 0;
+   animation-delay: .5s;
+}
+
+.carousel-caption p:last-of-type{
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+}
+
+.carousel-caption h2{
+    font-size: 3.25rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+.movieCarousel__trailer span,button{
+    animation-delay: .5s;
+}
+.movieCarousel__trailer>span{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid white;
+    font-size: 0.8rem;
+    display: inline-block;
+    line-height: 48px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.movieCarousel__trailer button{
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: white;
+    background: linear-gradient(to right, #fbbd61,#ec7532);
+    transform: .5s all;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    z-index: 1;
+}
+
+.movieCarousel__trailer button::before{
+    position: absolute;
+    top : 0;
+    left: 0;
+    content: "";
+    width: 110%;
+    height: 100%;
+    display: inline-block;
+    transform: skewX(30deg) translateX(-110%);
+    background-color: #ec7532;
+    transition: .5s all;
+    z-index: 1;
+}
+
+.movieCarousel__trailer button:hover::before{
+    transform: translateX(-10px) skewX(30deg);
+}
+
+.movieCarousel__trailer button span{
+    position: relative;
+    z-index: 20;
+}
+
+#carouselMovie .carousel-indicators li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: transparent;
+    opacity: 1;
+    box-sizing: border-box;
+}
+#carouselMovie .carousel-indicators{
+    justify-content: flex-start;
+    left: 50%;
+    bottom:10%;
+    transform: translateX(-50%);
+    margin-right: 0;
+    margin-left: 0;
+    padding:0 30px;
+}
+#carouselMovie .carousel-indicators li.active{
+    background-color: white;
+}
+
+.movieCarousel__overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,black,transparent);
+}
+
+
+#carouselMovie{
+    height: 650px;
+}
+
+#carouselMovie .carousel-inner{
+    height: 100%;
+}
+
+#carouselMovie .carousel-item{
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+#carouselMovie .carousel-item:first-child{
+    background-image: url(../img/hero-1.jpg);
+}
+
+#carouselMovie .carousel-item:nth-child(2){
+    background-image: url(../img/hero-2.jpg);
+}
+
+#carouselMovie .carousel-item:nth-child(3){
+    background-image: url(../img/hero-3.jpg);
+}
+
+
+/* New In */
+.newIn__title{
+    text-align: center;
+}
+.newIn__title h3{
+    font-size: 18px;
+    color: #4a4a4a;
+    margin: 1rem 0;
+}
+
+.newIn__title i{
+    color: #fbbd61;
+}
+.newIn__img{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.newIn__overlay{
+    width: 190%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom , #fbbd61 , #ec7532);
+    transform: skewX(30deg) translateX(-130%);
+    transition: .5s all;
+    opacity: 0.9;
+}
+.newIn__img:hover .newIn__overlay{
+    transform: skewX(30deg) translateX(-27%);
+}
+
+.newIn__btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;  
+    text-align: center; 
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    opacity: 0;
+    transition: .1s all;
+}
+.newIn__btn i{
+    width: 80px;
+    height: 80px;
+    border: 2px solid white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    transform: scale(1);
+    transition: .5s all;
+}
+.newIn__btn i:hover{
+    transform: scale(0.9);
+}
+.newIn__btn a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin: 1rem 0;
+    display: block;
+}
+
+.newIn__btn p{
+    color: white;
+
+}
+
+.newIn__img:hover .newIn__btn{
+    opacity: 1;
+}
+
+/* Header 2 */
+#headerFix{
+    position: fixed;
+    background-color: #101010;
+    top: 0;
+    width: 100%;
+    transform: translate(-50%,-100%);
+    transition: .7s all;
+    z-index: 20;
+}
+
+/* SHOWTIMES */
+.showTimes .nav-tabs .nav-item.show .nav-link,.showTimes .nav-tabs .nav-link.active{
+    border: none;
+}
+.showTimes .nav-tabs .nav-link.active{
+    color: #ec7532;
+}
+.showTimes .nav-tabs .nav-link{
+    padding: 0;
+    border: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #4a4a4a;
+}
+
+.showTimes .nav-tabs .nav-item{
+    margin-bottom: 0;
+}
+
+.showTimes .nav-tabs .nav-link span{
+    padding: 15px 30px;
+    display: block;
+}
+.showTimes__row img{
+    border-radius: 10px;
+}
+
+.showTimes__row div p:first-of-type{
+    font-size: 14px;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+    color: #ec7532;
+}
+.showTimes__row{
+    border-bottom: 1px solid #d8d8d8;
+}
+
+#myTabContent .tab-pane .showTimes__row:last-child{
+    border-bottom: none;
+}
+.showTimes__row h3{
+    font-size: 24px;
+    font-weight: 300;
+    color: #101010;
+    letter-spacing: 1px;
+}
+
+.showTimes__row div p:nth-of-type(2){
+    color: #717171;
+}
+
+.showTimes__row a {
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #ec7532;
+    transition: .5s all;
+}
+
+.showTimes__row a:hover{
+    color: #101010;
+}
+.showTimes__runingTimes{
+    font-size: 12px;
+    color: #4a4a4a;
+    letter-spacing: 1.5px;
+}
+
+.showTimes__runingTimes button{
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #717171;
+    background-color: #d8d8d8;
+}
+
+.showTimes__mins span:last-child{
+    width: 33px;
+    height: 33px;
+    display: inline-block;
+    line-height: 33px;
+    color: white;
+    background-color: #101010;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+/* Coming Soon */
+
+.comingSoon{
+    background: #101010 url(../img/slide-3.png) ;
+    background-size: cover;
+}
+
+.comingSoon__type{
+    font-size: 14px;
+    color: #ec7532;
+    letter-spacing: 2px;
+}
+
+.comingSoon h3{
+    font-size: 34px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    color: white;
+}
+.comingSoon__rating > i{
+    color: #fbbd61;
+}
+
+.comingSoon p{
+    margin: 1rem 0;
+}
+
+.comingSoon a{
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #ec7532;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .3s all;
+}
+
+.comingSoon a:hover{
+    color: white;
+}
+
+.comingSoon__video{
+    position: relative;
+}
+
+.comingSoon__video i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    border: 2px solid #ec7532;
+    border-radius: 50%;
+    font-size: 25px;
+    color: #ec7532;
+    cursor: pointer;
+    transform: translate(-50%,-50%) scale(1);
+    transition: .5s all;
+}
+
+.comingSoon__video:hover i{
+    transform: translate(-50%,-50%) scale(0.9);
+}
+
+
+/* Movie List */
+.movieList{
+    background-color: #101010;
+}
+
+.movieList__item{
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.movieList__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #101010;
+    opacity: 0.6;
+    transition: .5s all;
+}
+
+.movieList__item:hover .movieList__overlay{
+    opacity: 0;
+}
+
+/* Contact */
+
+.contact__content{
+    text-align: center;
+}
+
+.contact__content p{
+    font-size: 23px;
+    color: #4a4a4a;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.contact__content a{
+    text-decoration: none;
+    font-size: 46px;
+    color: #fbbd61;
+}
+
+/* Footer */
+
+.footer{
+    background-color: #101010;
+}
+.footer{
+    border-bottom: 1px solid #717171;
+}
+.footer__content h2{
+    text-transform: uppercase;
+    color: #ec7532;
+    font-size: 24px;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+}
+
+.footer__content ul li{
+    list-style: none;
+    color: white;
+    text-transform: capitalize;
+    line-height: 28px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .3s all;
+}
+
+.footer__content ul li:hover{
+    color: #fbbd61;
+}
+.icon__color:hover .fb__icon{
+    color: #4267B2;
+}
+.icon__color:hover .tw__icon{
+    color: #1DA1F2;
+}
+.icon__color:hover .gg__icon{
+    color: #DB4437;
+}
+.footer__content i{
+    color: white;
+    transition: .5s all;
+}
+
+.last__child{
+    background-color: #101010;
+    padding: 20px 0;
+    color: white;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width:991.98px){
+
+    /* Header */
+    header .navbar-brand{
+        max-width: 180px;
+    }
+    header .navbar-brand img{
+        max-width: 100%;
+    }
+
+    /* Nav Bar */
+    #movieNavbar .navbar-nav .nav-link{
+        font-size: 14px;
+        padding: 20px 12px;
+        letter-spacing: 2px;
+    }
+
+    /* ShowTimes */
+    
+
+    /* Coming Soon */
+
+    .comingSoon__content{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:767.98px) {
+
+    /* Global */
+    .line.active::after{
+        width: 0;
+    }
+
+
+    /* Header */
+    header .navbar-toggler{
+        color: #fbbd61;
+    }
+    header .navbar-toggler:focus{
+        outline: none;
+    }
+
+    /* Nav Bar */
+    #movieNavbar .navbar-nav{
+        background-color: rgba(0, 0, 0, 0.9);
+        text-align: center;
+    }
+
+    #movieNavbar .navbar-nav .active .nav-link{
+        color: #ec7532;
+    }
+
+    /* Carousel */
+
+    #carouselMovie  .carousel-caption h2{
+        font-size: 2.3rem;
+    }
+
+    /* Showtimes */
+
+    .showTimes .nav-tabs .nav-link{
+        font-size: 16px;
+        letter-spacing: 0;
+    }
+    .showTimes .nav-tabs .nav-link span{
+        padding: 10px 20px;
+    }
+}
+
+
+
+
+
+
+
+
